@@ -14,6 +14,7 @@ class App extends React.Component {
     }
     componentWillMount() {
         store.subscribe(() => {
+        //when store changes, get the new state from store and update the state, this will redraw the UI component
           var state = store.getState();
           this.setState({
             items: state.todo.items
@@ -28,7 +29,7 @@ class App extends React.Component {
          <div className='container'>
               <h1>To Do List using React + Redux</h1>
               <NewToDo store={store} ></NewToDo>            
-              <TodoList store={store} onremove={this.onremove} items={this.state.items}></TodoList>
+              <TodoList store={store} items={this.state.items}></TodoList>
               <Button className="btn btn-primary" onClick={this.clear}>Clear</Button> 
          </div>
       );
