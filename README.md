@@ -167,7 +167,7 @@ onremove = () =>{
     }
 ```
 ##Nutshell
-UI components will dispatch the actions to the store and store will perform the required actions on the state and let all the listeners know that the state has been changed. In our application only App.jsx is subscribed to the store. 
+UI components will dispatch the actions to the store along with the information and store will call assigned reducer which will perform the required algorithm on the state and let all the listeners know that the state has been changed(basically new state). In our application only App.jsx is subscribed to the store and App.jsx send the state to other components. 
 
 
  
